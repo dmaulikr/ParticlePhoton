@@ -1,0 +1,24 @@
+<html><head>
+  <script
+  src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"
+  type="text/javascript" charset="utf-8"></script>
+  <script>
+  var accessToken = "82c4fd6eafd0588fe9062a8d0e7b5de12881f947";
+  var deviceID = "4a0022000151353532373238";
+  var url = "https://api.spark.io/v1/devices/" + deviceID + "/blink";
+
+  function switchOn(){
+    $.post(url, {params: "on", access_token: accessToken } );
+  }
+  function switchOff(){
+    $.post(url, {params: "off", access_token: accessToken });
+  }
+
+  </script></head>
+
+  <body>
+    <h1>Picking List</h1>
+    <b>Item1</b>
+    <input type="button" onClick="switchOn()" value="SHOW" />
+    <input type="button" onClick="switchOff()" value="HIDE" />
+  </body></html>
